@@ -43,6 +43,35 @@ const Resume = (props) => {
         </div>
       );
     };
+    
+    const ProjectHeading = (props) => {
+      return (
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>{props.heading ? props.heading : ""}</span>
+            {props.demo ? (
+              <div className="heading-demo">
+                <a href="https://github.com/">
+                {props.demo}
+                </a>
+                
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <div className="resume-sub-heading">
+            <span>{props.subHeading ? props.subHeading : ""}</span>
+          </div>
+          <div className="resume-heading-description">
+            <span>{props.description ? props.description : ""}</span>
+          </div>
+        </div>
+      );
+    };
+    
+  
   
     /* STATIC RESUME DATA FOR THE LABELS*/
     const resumeBullets = [
@@ -69,14 +98,14 @@ const Resume = (props) => {
     const projectsDetails = [
       {
         title: "Personal Portfolio Website",
-        duration: { fromDate: "2020", toDate: "2021" },
         description:
           "A Personal Portfolio website to showcase all my details and projects at one place.",
         subHeading: "Technologies Used: React JS, Bootsrap",
+        demo: "Live Demo",
       },
       {
         title: "Mobile E-shop ",
-        duration: { fromDate: "2020", toDate: "2021" },
+        demo: "Live Demo",
         description:
           "An ecommerce application designed to sell products online wth payment system integration",
         subHeading:
@@ -84,7 +113,7 @@ const Resume = (props) => {
       },
       {
         title: "Ecommerce Website ",
-        duration: { fromDate: "2020", toDate: "2021" },
+        demo: "Live Demo",
         description:
           "Online ecommerce website for showcasing and selling products onlne with payment system integration, both Paypal and Stripe",
         subHeading:
@@ -168,14 +197,14 @@ const Resume = (props) => {
       /* PROJECTS */
       <div className="resume-screen-container" key="projects">
         {projectsDetails.map((projectsDetails, index) => (
-          <ResumeHeading
+          <ProjectHeading
             key={index}
             heading={projectsDetails.title}
             subHeading={projectsDetails.subHeading}
             description={projectsDetails.description}
-            fromDate={projectsDetails.duration.fromDate}
-            toDate={projectsDetails.duration.toDate}
+            demo = {projectsDetails.demo}
           />
+
         ))}
       </div>,
   
