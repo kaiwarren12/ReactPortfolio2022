@@ -52,7 +52,7 @@ const Resume = (props) => {
             <span>{props.heading ? props.heading : ""}</span>
             {props.demo ? (
               <div className="heading-demo">
-                <a href="https://github.com/">
+                <a href={props.link} target="_blank" rel="noreferrer">
                 {props.demo}
                 </a>
                 
@@ -90,34 +90,45 @@ const Resume = (props) => {
       { skill: "Express JS", ratingPercentage: 60 },
       { skill: "Node JS", ratingPercentage: 70 },
       { skill: "Mongo Db", ratingPercentage: 50 },
-      { skill: "Core Java", ratingPercentage: 60 },
-      { skill: "HTML", ratingPercentage: 80 },
-      { skill: "CSS", ratingPercentage: 80 },
+      { skill: "Core Java", ratingPercentage: 25 },
+      { skill: "HTML", ratingPercentage: 85 },
+      { skill: "CSS", ratingPercentage: 85 },
     ];
   
     const projectsDetails = [
       {
-        title: "Personal Portfolio Website",
+        title: "Google Book Search React-App",
         description:
-          "A Personal Portfolio website to showcase all my details and projects at one place.",
+          "This application uses the Google Books api to search and save your favorite books. ",
         subHeading: "Technologies Used: React JS, Bootsrap",
+        link: "https://google-book-app-search.herokuapp.com/",
         demo: "Live Demo",
       },
+      {  title: "Work Day Scheduler",
+      description:
+        "A simple calendar application for scheduling your work day. I created this by using Jquery and moment.js to make the scheduler interactive changing colors based on the time.  ",
+      subHeading: "Technologies Used: React JS, Bootsrap",
+      link: "https://google-book-app-search.herokuapp.com/",
+      demo: "Live Demo",
+    },
       {
-        title: "Mobile E-shop ",
+        title: "Fitness Tracker App ",
         demo: "Live Demo",
         description:
-          "An ecommerce application designed to sell products online wth payment system integration",
+          "A fitness tracking app that allows you to track your exercises starting with the type of execerise down to the amount of reps, sets, and weight used.  ",
         subHeading:
-          "Technologies Used:  React Native, Mongo DB, Express Js, Node Js, Redux.",
+          "Technologies Used: HTML, CSS, JavaScript, NodeJs, Express Js",
+          link: "https://fitness-app-tracker.herokuapp.com/",
       },
+
       {
-        title: "Ecommerce Website ",
+        title: "Note Taking App ",
         demo: "Live Demo",
         description:
-          "Online ecommerce website for showcasing and selling products onlne with payment system integration, both Paypal and Stripe",
+          "An application used to create notes and post using Express",
         subHeading:
-          "Technologies Used: Mongo DB, Epress Js, React Js, Node JS, Redux, Bootstrap.",
+          "Technologies Used: NodeJs, JavaScript, HTML, CSS, Express JS.",
+          link: "https://note-taking-appl.herokuapp.com/",
       },
     ];
   
@@ -203,6 +214,7 @@ const Resume = (props) => {
             subHeading={projectsDetails.subHeading}
             description={projectsDetails.description}
             demo = {projectsDetails.demo}
+            link = {projectsDetails.link}
           />
 
         ))}
